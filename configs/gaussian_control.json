@@ -1,0 +1,9 @@
+{
+  "extends": "smoke.json",
+  "v_dim": 0,
+  "k_values": [
+    1
+  ],
+  "control_v_dim_zero": false,
+  "output_dir": "results/gaussian_control"
+}

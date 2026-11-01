@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "soi-nuisance"
+version = "0.1.0"
+description = "Synthetic nuisance experiment for SOI, Line-MINE and Line-NWJ"
+requires-python = ">=3.11,<3.14"
+dependencies = ["numpy==2.2.6", "torch==2.7.1", "matplotlib==3.10.3"]
+
+[project.optional-dependencies]
+test = ["scipy==1.15.3", "pytest==8.4.1"]
+
+[project.scripts]
+soi-nuisance = "soi_nuisance.__main__:main"
+soi-repair-report = "soi_nuisance.repair_report:main"
+
+[project.gui-scripts]
+soi-nuisance-gui = "soi_nuisance.gui:main"
+soi-repair-report-gui = "soi_nuisance.repair_gui:main"
+
+[tool.setuptools.packages.find]
+include = ["soi_nuisance*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"

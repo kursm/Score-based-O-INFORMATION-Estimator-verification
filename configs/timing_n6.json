@@ -1,0 +1,37 @@
+{
+  "extends": "base.json",
+  "num_blocks": 6,
+  "k_values": [
+    1
+  ],
+  "train_sizes": [
+    1000
+  ],
+  "n_val": 1024,
+  "n_test": 2048,
+  "distribution_seeds": [
+    91
+  ],
+  "data_seeds": [
+    21
+  ],
+  "training_seeds": [
+    31
+  ],
+  "checkpoints_every": 0,
+  "evaluation_every": 0,
+  "diagnostic_samples": 0,
+  "log_every": 100,
+  "output_dir": "results/timing_n6",
+  "method_params": {
+    "soi": {
+      "training_steps": 100
+    },
+    "line_mine": {
+      "training_steps": 100
+    },
+    "line_nwj": {
+      "training_steps": 100
+    }
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "methods": [
+    "soi",
+    "line_mine",
+    "line_nwj"
+  ],
+  "benchmark": "redundancy",
+  "rho": 0.5,
+  "mixed_subsystems": [
+    {
+      "benchmark": "redundancy",
+      "size": 3,
+      "rho": 0.6
+    },
+    {
+      "benchmark": "synergy",
+      "size": 3,
+      "rho": 0.8
+    }
+  ],
+  "num_blocks": 3,
+  "u_dim": 1,
+  "v_dim": 1,
+  "k_values": [
+    1,
+    16
+  ],
+  "normalization": "population",
+  "transformation": "",
+  "train_sizes": [
+    1024
+  ],
+  "n_start": 1000,
+  "n_multiplier": 3,
+  "n_levels": 5,
+  "n_val": 512,
+  "n_test": 1024,
+  "distribution_seeds": [
+    11
+  ],
+  "data_seeds": [
+    21
+  ],
+  "training_seeds": [
+    31
+  ],
+  "control_v_dim_zero": true,
+  "budget_mode": "paper",
+  "budget_multipliers": [
+    1.0
+  ],
+  "equal_time_seconds": 60.0,
+  "max_run_seconds": null,
+  "eval_batch_size": 256,
+  "precision": "float32",
+  "deterministic": true,
+  "device": "auto",
+  "cpu_threads": 4,
+  "checkpoints_every": 50,
+  "evaluation_every": 50,
+  "log_every": 50,
+  "diagnostic_samples": 128,
+  "epsilon": null,
+  "save_checkpoints": true,
+  "output_dir": "results/smoke",
+  "method_params": {
+    "soi": {
+      "optimizer": {
+        "name": "Adam",
+        "lr": 0.01,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0
+      },
+      "batch_size": 256,
+      "training_steps": 150,
+      "width": null,
+      "time_dim": null,
+      "dim_mults": [],
+      "groups": 8,
+      "weight_s_functions": true,
+      "use_ema": true,
+      "ema_decay": 0.999,
+      "ema_timing": "before_step",
+      "mc_iter": 2,
+      "sde": {
+        "beta_min": 0.1,
+        "beta_max": 20.0,
+        "t_epsilon": 0.001,
+        "importance_sampling": true,
+        "inference_weighting": "upstream_constant",
+        "uniform_epsilon": 1e-05
+      }
+    },
+    "line_mine": {
+      "optimizer": {
+        "name": "Adam",
+        "lr": 0.001,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0
+      },
+      "batch_size": 64,
+      "training_steps": 150,
+      "width": null,
+      "width_cap": null,
+      "hidden_layers": null,
+      "pair_chunk": 4096,
+      "negative_sampling": "with_replacement",
+      "eval_aggregation": "paper_batch_mean"
+    },
+    "line_nwj": {
+      "optimizer": {
+        "name": "Adam",
+        "lr": 0.001,
+        "betas": [
+          0.9,
+          0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0
+      },
+      "batch_size": 64,
+      "training_steps": 150,
+      "width": null,
+      "width_cap": null,
+      "hidden_layers": null,
+      "pair_chunk": 4096,
+      "negative_sampling": "with_replacement",
+      "eval_aggregation": "paper_batch_mean"
+    }
+  },
+  "resume": false,
+  "dry_run": false,
+  "divergence_threshold": null,
+  "wall_time_seconds": null,
+  "rho_values": null,
+  "rho_subsystem_indices": [],
+  "convergence": null,
+  "report_mode": "full",
+  "simple_settings": null
+}

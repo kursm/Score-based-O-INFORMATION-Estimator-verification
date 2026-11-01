@@ -1,0 +1,42 @@
+{
+  "extends": "base.json",
+  "num_blocks": 6,
+  "k_values": [
+    1,
+    8,
+    64
+  ],
+  "train_sizes": [
+    1000,
+    5000,
+    20000,
+    100000
+  ],
+  "n_val": 10000,
+  "n_test": 10000,
+  "distribution_seeds": [
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "training_seeds": [
+    31
+  ],
+  "output_dir": "results/paper",
+  "checkpoints_every": 10000,
+  "evaluation_every": 10000,
+  "method_params": {
+    "soi": {
+      "training_steps": "paper",
+      "mc_iter": 10
+    },
+    "line_mine": {
+      "training_steps": "paper"
+    },
+    "line_nwj": {
+      "training_steps": "paper"
+    }
+  }
+}
